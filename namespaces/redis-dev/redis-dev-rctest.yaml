@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis-dev-ddstest-rc
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: development
+  source:
+    helm:
+      valueFiles:
+      - values/values_ebdc_np.yaml
+      - values.yaml
+      values: |
+        environment: dev
+        redis:
+          size: 1024
+          stateful:
+            enabled: false
+          replicas: 2
+    repoURL: https://github.com/rahulchak/argo-cd-redis
+    targetRevision: 0.1.8
+    path: charts/redis-dds
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: redis-dev
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+  revisionHistoryLimit: 5

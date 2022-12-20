@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: redis-dev-rctest
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   project: development
   source:

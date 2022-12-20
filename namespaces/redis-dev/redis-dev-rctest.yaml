@@ -17,7 +17,7 @@ spec:
           stateful:
             enabled: false
           replicas: 2
-    repoURL: https://github.com/rahulchak/argo-cd-redis
+    repoURL: https://github.com/rahulchak/rc-helm-redis
     targetRevision: 0.1.8
     path: charts/redis-dds
   destination:

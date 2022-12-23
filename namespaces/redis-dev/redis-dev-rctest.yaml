@@ -15,7 +15,7 @@ spec:
           size: 1024
           stateful:
             enabled: false
-          replicas: 2
+          replicas: 1
     repoURL: https://github.com/rahulchak/rc-helm-redis
     targetRevision: 0.1.8
     path: charts/redis-dds

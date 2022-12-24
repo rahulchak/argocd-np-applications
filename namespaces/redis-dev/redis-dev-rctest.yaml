@@ -17,7 +17,7 @@ spec:
             enabled: false
           replicas: 1
     repoURL: https://github.com/rahulchak/rc-helm-redis
-    targetRevision: 0.1.8
+    targetRevision: HEAD
     path: charts/redis-dds
   destination:
     server: https://kubernetes.default.svc
